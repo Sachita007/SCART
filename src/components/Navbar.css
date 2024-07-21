@@ -1,0 +1,161 @@
+/* General navbar styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+/* Logo styling */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Navigation links styling */
+.nav-links {
+    display: flex;
+    gap: 20px;
+    /* Space between links */
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+/* Search bar styling */
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: aliceblue;
+    border: 2px solid white;
+    border-radius: 5px;
+    overflow: hidden;
+    max-width: 500px;
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.search-bar input {
+    flex: 1;
+    padding: 8px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+.sIcondiv {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.sIcon {
+    color: #333;
+    font-size: 20px;
+}
+
+/* Cart icon styling */
+.cart-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.cart-icon .cIcon {
+    font-size: 24px;
+}
+
+.cart-quantity {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+}
+.LINK{
+    text-decoration: none;
+        /* Removes underline */
+        color: inherit;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+
+    .logo {
+        order: 1;
+        flex: 1;
+    }
+
+    .search-bar {
+        order: 2;
+        width: 60%;
+        margin: 10px 0;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        display: none;
+        order: 4;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .cDiv {
+        order: 3;
+        display: flex;
+        align-items: center;
+    }
+
+    .hamburger {
+        display: block;
+        margin-left: 15px;
+    }
+}
+
+/* Additional adjustments for very small screens */
+@media (max-width: 500px) {
+    /* ... (previous styles remain the same) ... */
+
+ 
+
+    .logo {
+        flex: 1;
+    }
+
+    .cDiv {
+        display: flex;
+        align-items: center;
+    }
+
+    .search-bar {
+        display: none;
+    }
+}
