@@ -1,14 +1,17 @@
 /* General navbar styling */
+.navbar-container {
+    width: 100%;
+    background-color: #3b5d50;
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
-    background-color: #333;
-    color: white;
-    width: 100%;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
+    padding: 10px 100px;
     box-sizing: border-box;
 }
 
@@ -22,7 +25,6 @@
 .nav-links {
     display: flex;
     gap: 20px;
-    /* Space between links */
 }
 
 .nav-link {
@@ -39,14 +41,15 @@
 .search-bar {
     display: flex;
     align-items: center;
-    background-color: aliceblue;
-    border: 2px solid white;
-    border-radius: 5px;
+    background-color: white;
+    border-radius: 15px;
     overflow: hidden;
-    max-width: 500px;
-    width: 100%;
-    padding: 5px;
+    max-width: 300px;
+    width: 70%;
+    padding: 1px 5px;
     box-sizing: border-box;
+    margin-left: 10px;
+    margin-left: 10px;
 }
 
 .search-bar input {
@@ -97,65 +100,84 @@
     cursor: pointer;
     font-size: 24px;
 }
-.LINK{
+
+.LINK {
     text-decoration: none;
-        /* Removes underline */
-        color: inherit;
+    color: inherit;
+}
+
+.cDiv {
+    display: flex;
+    align-items: center;
+}
+
+/* Hide mobile nav by default */
+.mobile-nav {
+    display: none;
 }
 
 /* Media queries for responsive design */
 @media (max-width: 768px) {
+    .navbar {
+        flex-wrap: wrap;
+        padding: 30px;
+    }
 
     .logo {
-        order: 1;
         flex: 1;
     }
 
     .search-bar {
+        max-width: 450px;
         order: 2;
-        width: 60%;
-        margin: 10px 0;
-    }
-
-    .nav-links {
-        flex-direction: column;
         width: 100%;
-        display: none;
-        order: 4;
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-    .cDiv {
-        order: 3;
-        display: flex;
-        align-items: center;
+        margin: 10px 10px;
     }
 
     .hamburger {
         display: block;
         margin-left: 15px;
     }
+
+    .desktop-nav {
+        display: none;
+    }
+
+    .mobile-nav {
+        flex-direction: column;
+        justify-content: space-around;
+        width: 100%;
+        display: none;
+        padding: 10px 10px;
+
+    }
+
+    .mobile-nav.active {
+        display: flex;
+    }
 }
 
 /* Additional adjustments for very small screens */
 @media (max-width: 500px) {
-    /* ... (previous styles remain the same) ... */
+    .navbar {
+        padding: 10px 15px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
 
  
 
-    .logo {
-        flex: 1;
+    .sIcon {
+        font-size: 18px;
     }
 
-    .cDiv {
-        display: flex;
-        align-items: center;
+    .cart-icon .cIcon {
+        font-size: 18px;
     }
 
-    .search-bar {
-        display: none;
+    .cart-quantity {
+        font-size: 10px;
     }
 }

@@ -7,6 +7,7 @@ const CartProvider = ({ children }) => {
     const [products, setProducts] = useState([]);
     const [filteredProducts, setFilteredProducts] = useState([]);
     const [cart, setCart] = useState([]);
+    const [searchQuery, setSearchQuery] = useState('');
 
     useEffect(() => {
         const fetchProducts = async () => {
@@ -49,11 +50,17 @@ const CartProvider = ({ children }) => {
             )
         );
     };
+    const handleSearch = (query) => {
+        setSearchQuery(query);
+        setFilteredProducts(products.filter(product =>
+            product.name.toLowerCase().includes(query.toLowerCase())
+        ));
+    };
 
     const totalPrice = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
     return (
-        <CartContext.Provider value={{ products, filteredProducts, setFilteredProducts, cart, addToCart, removeFromCart, updateQuantity, totalPrice }}>
+        <CartContext.Provider value={{ products, filteredProducts, setFilteredProducts, handleSearch, cart, addToCart, removeFromCart, updateQuantity, totalPrice }}>
             {children}
         </CartContext.Provider>
     );
