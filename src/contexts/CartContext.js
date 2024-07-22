@@ -31,9 +31,11 @@ const CartProvider = ({ children }) => {
         setCart(prevCart => {
 
             const itemInCart = prevCart.find(item => item._id === product._id);
+
             if (itemInCart) {
+
                 return prevCart.map(item =>
-                    item._id === product._id ? { ...item, quantity: item.quantity + quantity } : item
+                    item._id === product._id ? { ...item, quantity: item.quantity + (quantity ? quantity : 1) } : item
                 );
             } else {
                 console.log("PREV", prevCart, "\nProd", product)
