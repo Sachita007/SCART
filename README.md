@@ -2,12 +2,13 @@
 
 SCART is a modern, responsive e-commerce platform built with React.
 
-![SCART Screenshot](path_to_screenshot.png)
+![SCART Screenshot](./public/SCART.png)
 
 ## Table of Contents
 
 - [Features](#features)
 - [Getting Started](#getting-started)
+- [API](#api)
 - [To-Do](#to-do)
 
 ## Features
@@ -44,6 +45,15 @@ SCART is a modern, responsive e-commerce platform built with React.
    npm start
    ```
 5. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+## API
+
+SCART uses the my Own FakeShopAPI for managing product data. The FakeShopAPI is a RESTful API built with Node.js, Express.js, and MongoDB.
+
+- [Repo Link](https://github.com/Sachita007/FakeShopAPI)
+
+FakeShopAPI Documentation
+For detailed information on how to use the FakeShopAPI, please refer to the [API Documentation](https://fake-shopapi.netlify.app/).
 
 ## To-Do
 
