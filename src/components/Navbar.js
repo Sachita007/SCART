@@ -4,7 +4,7 @@ import { CiShoppingCart, CiSearch } from "react-icons/ci";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
 import './Navbar.css';
-import { Link } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import Product from './Product';
 
 
@@ -14,6 +14,7 @@ const Navbar = () => {
     const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [input, setInput] = useState('');
+    const location = useLocation();
     const { handleSearch } = useContext(CartContext);
 
     const handleInputChange = (e) => {
@@ -28,6 +29,10 @@ const Navbar = () => {
         setIsMenuOpen(!isMenuOpen);
     };
 
+    const isActive = (path) => {
+        console.log(location.pathname === path)
+        return location.pathname === path ? 'active' : '';
+    }
     return (
         <div className="navbar-container">
             <nav className="navbar">
@@ -40,10 +45,10 @@ const Navbar = () => {
 
                 </div>
                 <div className="nav-links desktop-nav">
-                    <Link to="/" className="nav-link">Home</Link>
-                    <Link to="/products" className="nav-link">Products</Link>
-                    <Link to="/about" className="nav-link">About</Link>
-                    <Link to="/contact" className="nav-link">Contact</Link>
+                    <Link to="/" className={`nav-link ${isActive('/')}`}>Home</Link>
+                    <Link to="/products" className={`nav-link ${isActive('/products')}`}>Products</Link>
+                    <Link to="/about" className={`nav-link ${isActive('/about')}`}>About</Link>
+                    <Link to="/contact" className={`nav-link ${isActive('/contact')}`}>Contact</Link>
                 </div>
                 <div className='cDiv'>
                     <div className="cart-icon">

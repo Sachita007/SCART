@@ -92,6 +92,9 @@
 }
 
 @media (max-width: 1024px) {
+    .heroSec {
+            margin-top: 5rem;
+        }
     .heroContent {
         flex-direction: column;
         text-align: center;

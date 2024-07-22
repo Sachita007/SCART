@@ -22,7 +22,7 @@ const Cart = () => {
                 <div className='cartMain'>
                     <div className='itemsDiv'>
                         {cart.map(item => (
-                            <div key={item.id} className="cart-item">
+                            <div key={item._id} className="cart-item">
                                 <img src={item.images[0]} alt={item.name} className="cart-item-image" onError={(e) => e.target.src = placeholderimage} />
                                 <div className='itemDet'>
                                     <div className="cart-item-details">
