@@ -8,6 +8,7 @@ const CartProvider = ({ children }) => {
     const [filteredProducts, setFilteredProducts] = useState([]);
     const [cart, setCart] = useState([]);
     const [searchQuery, setSearchQuery] = useState('');
+    const [category, setCategory] = useState('');
 
     useEffect(() => {
         const fetchProducts = async () => {
@@ -56,11 +57,20 @@ const CartProvider = ({ children }) => {
             product.name.toLowerCase().includes(query.toLowerCase())
         ));
     };
+    const handleCategory = (category) => {
+        setCategory(category)
+        setFilteredProducts(products.filter(product => category ?
+            product.category.includes(category.toLowerCase()) : product
+        ));
+    };
 
+    const clearCart = () => {
+        setCart([])
+    }
     const totalPrice = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
     return (
-        <CartContext.Provider value={{ products, filteredProducts, setFilteredProducts, handleSearch, cart, addToCart, removeFromCart, updateQuantity, totalPrice }}>
+        <CartContext.Provider value={{ products, clearCart, handleCategory, filteredProducts, setFilteredProducts, handleSearch, cart, addToCart, removeFromCart, updateQuantity, totalPrice }}>
             {children}
         </CartContext.Provider>
     );

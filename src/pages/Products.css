@@ -1,0 +1,50 @@
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 3rem;
+}
+
+.pagination button {
+    margin: 0 5px;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.pagination button.active {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+}
+.pTopSec {
+    width: 100%;
+    padding: 20px 14%;
+    box-sizing: border-box;
+}
+
+.pTopSecContent {
+    max-width: 1200px;
+    /* or whatever maximum width you prefer */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.pTitle {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #3b5d50;
+    margin-bottom: 20px;
+    /* Add some space between title and categories */
+}
+
+@media (max-width: 500px) {
+    .pTitle {
+        font-size: 2rem;
+        font-weight: 800;
+        color: #3b5d50;
+    }
+}

@@ -38,17 +38,51 @@
     display: flex;
     gap: 20px;
 }
+.selectDiv{
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    display: flex;
+    gap: 4rem;
+    font-size: 3rem;
+}
+.sItem{
+    color:#ccc ;
+}
+.Active{
+    color: #3b5d50;
+    font-size: 3.1rem;
+}
 
-.heroButtons button {
+
+.sItem:hover {
+    cursor: pointer;
+    color: #3b5d50;
+    font-size: 3.1rem;
+}
+
+.shopNow {
     padding: 10px 20px;
     border-radius: 20px;
+    border: 0;
     font-size: 1rem;
     cursor: pointer;
     background-color: #f9bf29;
 }
-.ex{
-  
+.shopNow:hover {
+    font-size: 1.1rem;
+}
+.explore{
+    padding: 10px 20px;
+    border: 1px solid;
+    color: #fff;
+        border-radius: 20px;
+        font-size: 1rem;
+        cursor: pointer;
     background-color: #3b5d50;
+}
+.explore:hover {
+    font-size: 1.1rem;
+  
 }
 
 .heroImg {
@@ -71,4 +105,22 @@
     .heroButtons {
         justify-content: center;
     }
+}
+
+@media (max-width: 600px) {
+.selectDiv {
+        margin-top: 3rem;
+        display: flex;
+        gap: 2rem;
+        font-size: 1.5rem;
+    }
+        .Active {
+            color: #3b5d50;
+            font-size: 1.6rem;
+        }
+                .sItem:hover {
+                    cursor: pointer;
+                    color: #3b5d50;
+                    font-size: 1.6rem;
+                }
 }

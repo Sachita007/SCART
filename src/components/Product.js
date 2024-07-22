@@ -2,6 +2,12 @@ import React from 'react';
 import "./Product.css"
 import placeholderImage from './../assets/images/placeholder.jpg'; // Ensure you have a placeholder image in your project
 
+const shortenName = (name, maxLength = 20) => {
+    if (name.length <= maxLength) return name;
+    return name.slice(0, maxLength - 3) + '...';
+};
+
+
 const Product = ({ product, addToCart }) => (
     <div className="product-card">
         <img
@@ -10,9 +16,9 @@ const Product = ({ product, addToCart }) => (
             alt={product.name}
             onError={(e) => e.target.src = placeholderImage}
         />
-        <h3 className="product-name">{product.name}</h3>
+        <h3 className="product-name">{shortenName(product.name)}</h3>
         <div className='priceSe'>
-            <p className="product-price">${product.price}</p>
+            <p className="product-price">₹{product.price}</p>
             <button className="add-to-cart-btn" onClick={() => addToCart(product)}>Add to Cart</button>
         </div>
     </div>

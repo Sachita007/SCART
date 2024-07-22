@@ -3,7 +3,7 @@ import { CartContext } from '../contexts/CartContext';
 import Product from './Product';
 import Hero from './Hero';
 
-const ProductList = () => {
+const ProductList = ({ number }) => {
     const { filteredProducts, addToCart } = useContext(CartContext);
 
     if (!filteredProducts.length) {
@@ -12,9 +12,8 @@ const ProductList = () => {
 
     return (
         <>
-            <Hero />
             <div className="product-list">
-                {filteredProducts.map(product => (
+                {(number ? filteredProducts.slice(0, number) : filteredProducts).map((product, index) => (
                     <Product key={product._id} product={product} addToCart={addToCart} />
                 ))}
             </div>

@@ -8,10 +8,11 @@
 }
 
 .product-list {
-  margin-top: 5rem;
+  margin-top: 1rem;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
-  padding: 5rem;
+  padding: 0 5rem 5rem;
   gap: 20px;
 }
 @media (max-width: 768px) {
@@ -30,12 +31,3 @@
  
 }
 
-.cart-item {
-  border: 1px solid #ccc;
-  padding: 10px;
-  border-radius: 5px;
-}
-
-.cart {
-  margin-top: 20px;
-}
