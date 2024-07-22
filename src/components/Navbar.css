@@ -1,5 +1,6 @@
 /* General navbar styling */
 .navbar-container {
+    position: fixed;
     width: 100%;
     background-color: #3b5d50;
     color: white;

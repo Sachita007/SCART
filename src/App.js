@@ -10,6 +10,7 @@ import { Routes, Route } from "react-router-dom";
 import "./App.css"
 import Footer from './components/Footer';
 import Checkout from './pages/Checkout';
+import ProductPage from './pages/ProductPage';
 
 const App = () => (
   <CartProvider>
@@ -21,6 +22,7 @@ const App = () => (
         <Route exact path="/products" element={<Products />}></Route>
         <Route exact path="/cart" element={<Cart />}></Route>
         <Route exact path="/Checkout" element={<Checkout />}></Route>
+        <Route path="/product/:id" element={<ProductPage />} />
 
       </Routes>
       <Footer />

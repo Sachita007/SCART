@@ -31,7 +31,7 @@ const Navbar = () => {
     return (
         <div className="navbar-container">
             <nav className="navbar">
-                <div className="logo">LOGO</div>
+                <div className="logo">SCART</div>
                 <div className="search-bar">
                     <div className='sIcondiv'>
                         <CiSearch className='sIcon' />

@@ -1,6 +1,7 @@
 import React from 'react';
 import "./Product.css"
 import placeholderImage from './../assets/images/placeholder.jpg'; // Ensure you have a placeholder image in your project
+import { Link } from 'react-router-dom';
 
 const shortenName = (name, maxLength = 20) => {
     if (name.length <= maxLength) return name;
@@ -16,7 +17,9 @@ const Product = ({ product, addToCart }) => (
             alt={product.name}
             onError={(e) => e.target.src = placeholderImage}
         />
-        <h3 className="product-name">{shortenName(product.name)}</h3>
+        <Link className='LINK' to={`/product/${product._id}`}>
+            <h3 className="product-name">{shortenName(product.name)}</h3>
+        </Link>
         <div className='priceSe'>
             <p className="product-price">₹{product.price}</p>
             <button className="add-to-cart-btn" onClick={() => addToCart(product)}>Add to Cart</button>
