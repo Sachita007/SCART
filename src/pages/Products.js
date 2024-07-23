@@ -12,7 +12,10 @@ const Products = () => {
     const [itemsPerPage] = useState(8);
 
     if (!filteredProducts.length) {
-        return <p>Loading products...</p>;
+        return <div className="loading-container">
+            <div className="loading-spinner"></div>
+            <p className="loading-text">Loading amazing products...</p>
+        </div>
     }
 
     // Calculate the indexes for slicing the array

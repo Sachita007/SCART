@@ -23,7 +23,10 @@ const ProductPage = () => {
     }, [id]);
 
     if (!product) {
-        return <div>Loading...</div>;
+        return <div className="loading-container">
+            <div className="loading-spinner"></div>
+            <p className="loading-text">Loading amazing products...</p>
+        </div>
     }
 
     const handleAddToCart = () => {
@@ -34,6 +37,16 @@ const ProductPage = () => {
     const handleQuantityChange = (e) => {
         setQuantity(Math.max(1, parseInt(e.target.value)));
     };
+    const handleIncrement = () => {
+        setQuantity(quantity + 1)
+    };
+
+    const handleDecrement = () => {
+        if (quantity > 1) {
+            setQuantity(quantity - 1)
+        }
+    };
+
 
     return (
         <div className="product-page">
@@ -49,12 +62,17 @@ const ProductPage = () => {
                     <p className="product-price">₹{product.price.toFixed(2)}</p>
                     <p className="product-description">{product.description}</p>
                     <div className="product-actions">
-                        <input
-                            type="number"
-                            value={quantity}
-                            onChange={handleQuantityChange}
-                            min="1"
-                        />
+                        <div className="quantity-control">
+                            <button onClick={() => handleDecrement()} className="quantity-btn">-</button>
+                            <input
+                                type="number"
+                                min="1"
+                                value={quantity}
+                                onChange={handleQuantityChange}
+                                className="cart-item-quantity"
+                            />
+                            <button onClick={() => handleIncrement()} className="quantity-btn">+</button>
+                        </div>
                         <button onClick={handleAddToCart} className="add-to-cart-button">
                             Add to Cart
                         </button>

@@ -35,7 +35,7 @@ const Navbar = () => {
     return (
         <div className="navbar-container">
             <nav className="navbar">
-                <div className="logo">SCART</div>
+                <div className="logo"><Link className='LINK' to={"/"}> SCART </Link></div>
                 <div className="search-bar">
                     <div className='sIcondiv'>
                         <CiSearch className='sIcon' />

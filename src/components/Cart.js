@@ -13,6 +13,16 @@ const Cart = () => {
         console.log('Proceeding to checkout...');
     };
 
+    const handleIncrement = (item) => {
+        updateQuantity(item, item.quantity + 1);
+    };
+
+    const handleDecrement = (item) => {
+        if (item.quantity > 1) {
+            updateQuantity(item, item.quantity - 1);
+        }
+    };
+
     return (
         <div className="cart-container">
             <h2 className="cart-title">Shopping Cart</h2>
@@ -30,13 +40,17 @@ const Cart = () => {
                                         <p className="cart-item-price">₹{item.price}</p>
                                     </div>
                                     <div className="cart-item-actions">
-                                        <input
-                                            type="number"
-                                            min="1"
-                                            value={item.quantity}
-                                            onChange={(e) => updateQuantity(item, e.target.value)}
-                                            className="cart-item-quantity"
-                                        />
+                                        <div className="quantity-control">
+                                            <button onClick={() => handleDecrement(item)} className="quantity-btn">-</button>
+                                            <input
+                                                type="number"
+                                                min="1"
+                                                value={item.quantity}
+                                                onChange={(e) => updateQuantity(item, e.target.value)}
+                                                className="cart-item-quantity"
+                                            />
+                                            <button onClick={() => handleIncrement(item)} className="quantity-btn">+</button>
+                                        </div>
                                         <button
                                             onClick={() => removeFromCart(item)}
                                             className="cart-item-remove"

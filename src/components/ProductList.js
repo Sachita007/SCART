@@ -7,7 +7,10 @@ const ProductList = ({ number }) => {
     const { filteredProducts, addToCart } = useContext(CartContext);
 
     if (!filteredProducts.length) {
-        return <p>Loading products...</p>; // Optionally add a loading spinner here
+        return <div className="loading-container">
+            <div className="loading-spinner"></div>
+            <p className="loading-text">Loading amazing products...</p>
+        </div>
     }
 
     return (

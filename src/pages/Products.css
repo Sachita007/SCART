@@ -130,7 +130,7 @@ Product Pages  */
 
 @media (max-width: 768px) {
   .product-page {
-    margin: 5rem 1rem;
+    margin: 7rem 5rem 1rem;
   }
   .product-image2 img {
     width: 250px;

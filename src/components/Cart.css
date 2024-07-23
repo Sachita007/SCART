@@ -221,3 +221,35 @@
     padding: 20px 0;
   }
 }
+
+.quantity-control {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.quantity-btn {
+  width: 30px;
+  height: 30px;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quantity-btn:hover {
+  background-color: #e0e0e0;
+}
+
+.cart-item-quantity {
+  width: 40px;
+  text-align: center;
+  margin: 0 5px;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
